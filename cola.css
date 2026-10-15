@@ -1,0 +1,320 @@
+:root {
+  --primary-color: #d71920;
+  --primary-hover: #b21218;
+  --accent-color: #0c6ef2;
+  --text-main: #121826;
+  --text-muted: #475467;
+  --bg-main: #ffffff;
+  --bg-light: #eef6ff;
+  --bg-soft: #fff0f1;
+  --border-color: #dce6f5;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-family: "Oswald", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px; /* supaya judul section tidak tertutup navbar */
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-main);
+  background: linear-gradient(180deg, #fff8f8 0%, #eef6ff 100%);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 8px 20px rgba(229, 29, 42, 0.35);
+}
+
+.logo-text {
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  padding: 140px 0 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  width: 400px;
+  height: 450px;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 24px;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.hero-image img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Tombol */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-main);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+}
+
+/* Section */
+.section {
+  padding: 100px 0;
+}
+
+.bg-light {
+  background: linear-gradient(180deg, #eef6ff 0%, #f0f9ff 100%);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  margin: 16px auto 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Kalau isinya cuma satu blok (Layanan, Kontak), ambil selebar penuh */
+.about-content > :only-child {
+  grid-column: 1 / -1;
+}
+
+.about-text {
+  text-align:center
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  transition: var(--transition);
+  cursor: default;
+}
+
+.skill-tag:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer.section {
+  padding: 32px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fff5f5 100%);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+/* Animasi masuk di hero */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.7s ease both;
+}
+
+.fade-in-delay {
+  animation: fade-in 0.7s ease 0.2s both;
+}
